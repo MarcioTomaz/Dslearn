@@ -28,3 +28,7 @@ INSERT INTO tb_resource ( title, description, position, img_Uri, type, offer_id 
 INSERT INTO tb_resource ( title, description, position, img_Uri, type, offer_id ) VALUES ('Lives', 'Lives exclusivas para a turma', 3 , 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLrhKyvYKy6K8ajHc8MSOouUR5HEl3RHm23Q&usqp=CAU', 0, 1);
 
 
+INSERT INTO tb_section ( title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ( 'Capitulo 1','Neste capitulo vamos começar', 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLrhKyvYKy6K8ajHc8MSOouUR5HEl3RHm23Q&usqp=CAU',1, null);
+INSERT INTO tb_section ( title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ( 'Capitulo 2','Neste capitulo vamos continuar', 2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLrhKyvYKy6K8ajHc8MSOouUR5HEl3RHm23Q&usqp=CAU',1, 1);
+INSERT INTO tb_section ( title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ( 'Capitulo 3','Neste capitulo vamos continuar', 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLrhKyvYKy6K8ajHc8MSOouUR5HEl3RHm23Q&usqp=CAU',1, 2);
+
