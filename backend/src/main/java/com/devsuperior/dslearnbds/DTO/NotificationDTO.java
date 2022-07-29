@@ -1,40 +1,40 @@
-package com.devsuperior.dslearnbds.entities;
+package com.devsuperior.dslearnbds.DTO;
 
-import javax.persistence.*;
+
+import com.devsuperior.dslearnbds.entities.Notification;
+
 import java.io.Serializable;
 import java.time.Instant;
 
-@Entity
-@Table(name = "tb_notification")
-public class Notification implements Serializable {
+public class NotificationDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String text;
-
-    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant moment;
-
     private boolean read;
     private String route;
+    private Long userId;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    public NotificationDTO(){}
 
-    public Notification(){}
+    public NotificationDTO(Long id, String text, Instant moment, boolean read, String route, Long userId) {
+        this.id = id;
+        this.text = text;
+        this.moment = moment;
+        this.read = read;
+        this.route = route;
+        this.userId = userId;
+    }
 
-    public Notification(Long id, String text, Instant moment, boolean read, String route, User user) {
-        id = id;
-        text = text;
-        moment = moment;
-        read = read;
-        route = route;
-        user = user;
+    public NotificationDTO(Notification entity) {
+        id = entity.getId();
+        text = entity.getText() ;
+        moment = entity.getMoment();
+        read = entity.isRead();
+        route = entity.getRoute();
+        userId = entity.getUser().getId();
     }
 
     public Long getId() {
@@ -77,12 +77,11 @@ public class Notification implements Serializable {
         this.route = route;
     }
 
-    public User getUser() {
-        return user;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
-
 }
